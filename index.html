@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <meta name="apple-mobile-web-app-capable" content="yes">        
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="controller.css">
+
+  </head>
+  <body>
+    <!-- 2 NES-style DPADs (same layout as a standard drone RC unit) -->
+	<div id="left">
+		<br /><br /><br />
+		<center>
+				<span class="dpad-button" direction="up">Up</span><br />
+				<span class="dpad-button" direction="counterClockwise">&lt; Yaw</span><span class="dpad-button" direction="clockwise">Yaw &gt;</span><br />
+				<span class="dpad-button" direction="down">Down</span>
+		</center>
+	</div>
+	<div id="right">
+		<br /><br /><br />
+		<center>
+				<span class="dpad-button" direction="forward">Fwd</span><br />
+				<span class="dpad-button" direction="left">&lt; Left</span><span class="dpad-button" direction="right">Right &gt;</span><br />
+				<span class="dpad-button" direction="backward">Back</span>
+		</center>
+	</div>
+	
+	
+	<div class="title"><i>kittyhawk v0.1 alpha</i></div>
+	<div class="takeoff-land" action="takeoff">Take Off</div>
+	<!-- Throttle -->
+	<select id="speed">
+		<option value="10">&nbsp;&nbsp;&nbsp;&nbsp;Throttle</option>
+		<option value="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</option>
+		<option value="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25</option>
+		<option value="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50</option>
+		<option value="100">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100</option>
+	</select>
+	<!-- Status bar -->
+	<div id="status">
+		<a class="emergency">emergency landing</a>
+	</div>
+	
+	<!-- Page-specific javascript -->
+	<script type="text/javascript" src="controller.js"></script>
+  </body>
+</html>

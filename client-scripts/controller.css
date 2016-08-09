@@ -1,0 +1,110 @@
+        html, body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0;
+            margin: 0;
+            background-color:#CCCCCC;
+            overflow:hidden;
+        }
+
+        #left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 90%;
+            width: 50%;
+            /*background: rgba(0, 255, 0, 0.1);*/
+        }
+
+        #right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 90%;
+            width: 50%;
+            /*background: rgba(0, 0, 255, 0.1);*/
+        }
+        #status {
+        	position:absolute;
+        	left:0;
+        	width:100%;
+        	top:90%;
+        	height:10%;
+        	border-top: solid 1px black;
+        	text-align:center;
+        	background-color:black;
+        	color:white;
+        }
+        .takeoff-land {
+        	position:absolute;
+        	width:13%;
+        	left:34%;
+        	top:70%;
+        	height:6%;
+        	padding-top:5px;
+        	background-color:blue;
+        	font-family:sans-serif;
+        	text-align:center;
+        	color:white;
+        	font-weight:bold;
+        	font-size:14px;
+        	border-radius:5px !important;
+        	-webkit-user-select:none;
+
+        }
+        .title {
+        	position:absolute;
+        	width:30%;
+        	left:35%;
+        	-webkit-user-select:none;
+        	text-align:center;
+        	top:5%;
+        	font-size:18px;
+        	font-weight:bold;
+        	font-family:sans-serif;
+        }
+        #speed {
+            position:absolute;
+        	width:13%;
+        	left:53%;
+        	top:70%;
+        	height:7%;
+        	background-color:green;
+        	font-family:sans-serif;
+        	text-align:center;
+        	color:white;
+        	font-weight:bold;
+        	font-size:14px;
+        	border-radius:5px !important;
+        }
+        
+        .emergency {
+        	position:absolute;
+        	width:20%;
+        	left:40%;
+        	top:0;
+        	height:5%;
+        	color:yellow;
+        	font-family:sans-serif;
+        	text-align:center;
+        }
+        
+        .dpad-button {
+			padding:20px 10px 20px 10px;
+        	background-color:red !important;
+        	color:white;
+        	font-weight:bold;
+        	text-decoration:none;
+        	text-align:center;
+        	display:inline-block;
+        	width:100px;
+        	font-family:sans-serif;
+        	-webkit-user-select:none;
+        }
+        
+        .pressed {
+        	background-color:#990000 !important;
+        }
