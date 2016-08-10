@@ -2,22 +2,8 @@ var express = require('express');
 var app=express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var sockets = []; 					  //A simple connection manager
-var fpvStatus = {status:'off', url:''}; //State of the aerial video feed
+var sockets = []; //Future: when we add support for multiple aircraft-controller pairs we will need to keep track of the connected devices
 
-//Telemetry / status message template with defaults. By no means complete 
-var uavStatus = {
-	connected:false, 
-	flying:false, 
-	flightStatus:'Unknown',
-	altitude:null, 
-	battery:null,  
-	gps:null,
-	location: null,
-	homepoint:null,
-	navData:null,
-	lastUpdated: new Date()
-};
 
 /* The status and control panel UI */
 app.get('/', function(req, res){
@@ -46,7 +32,12 @@ app.get('/fpv', function(req, res) {
 });
 
 /* A message router - pilot sends control messages to drone's flight computer (kittyhawk), 
-   drone sends telemetry data back to pilot (polled from UAV by kittyhawk and sent here) */
+   drone sends telemetry data back to pilot (UAV raises events, kittyhawk packages event data in status messages, 
+   and sends here)
+   
+   Todo: 
+   
+   */
 io.on('connection', function(socket){
 
   socket.on('control', function(msg){
